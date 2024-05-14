@@ -1,24 +1,35 @@
-# Angular 17 CRUD with Rest API
+<h1 align="center" id="title">AngularApi</h1>
 
+<p id="description">Este es un proyecto que combina Angular 17 en el frontend con una API REST desarrollada con Express.js en el backend utilizando MySQL como base de datos. La aplicación proporciona una interfaz de usuario interactiva para realizar operaciones CRUD (Crear Leer Actualizar Eliminar) en los datos almacenados en la base de datos. La integración entre el frontend y el backend permite una gestión eficiente de los datos a través de solicitudes HTTP. Este README proporciona instrucciones detalladas para configurar y ejecutar el proyecto en un entorno local.</p>
 
-## Funcionalidades
+<h2>Project Screenshots:</h2>
 
-- **Frontend (Angular 17)**:
-  - Interfaz de usuario interactiva construida con Angular 17.
-  - Páginas para visualizar, agregar, editar y eliminar datos.
-  - Integración con la API REST para el intercambio de datos.
+<img src="https://i.postimg.cc/tTJSgks4/Captura-de-pantalla-2024-05-14-a-las-19-39-53.png" alt="project-screenshot" width="800" height="400/">
 
-- **Backend (Express.js)**:
-  - API RESTful para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos.
-  - Implementación de rutas para gestionar las solicitudes HTTP desde el frontend.
+<h2>🛠️ Installation Steps:</h2>
 
-- **Base de datos (MySQL)**:
-  - Almacenamiento persistente de datos utilizando MySQL como base de datos relacional.
-  - Tablas diseñadas para almacenar la información necesaria para el proyecto.
+<p>1. Clone repository:</p>
 
-## Requisitos
+```
+git clone https://github.com/mvrxs/angularApi.git
+```
 
-- Node.js y npm instalados en el sistema.
-- MySQL Server instalado y en funcionamiento.
+<p>2. go to folder</p>
 
-## Configuración
+```
+cd /foldername
+```
+
+<p>3. install dependencies</p>
+
+```
+npm install
+```
+
+<p>4. Launch project 🚀</p>
+
+```
+ng serve
+```
+
+<h2>💖Like my work?</h2>
