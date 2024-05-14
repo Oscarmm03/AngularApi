@@ -1,84 +1,91 @@
 <div>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div class="submit-form">
-    
-    <div *ngIf="!submitted">
-      <!-- Columna 1 -->
-      <div class="lg:flex lg:flex-col lg:space-y-4">
-        <!-- Reference -->
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="submit-form">
 
-        <!-- Name -->
-        <div>
-            <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Name:</label>
-            <input type="text" id="name" formControlName="name"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
-                [(ngModel)]="tutorial.name">
-            <p *ngIf="f.name.invalid && (f.name.value && f.name.value.length < 1) && (f.name.untouched || f.name.touched)"
-                class="text-red-500">* Name is required</p>
-            <p *ngIf="f.name.value && f.name.value.length > 25 && (f.name.untouched || f.name.touched)"
-                class="text-red-500">* Name can't be more than 25 characters</p>
-        </div>
+            <div *ngIf="!submitted">
+                <!-- Columna 1 -->
+                <div class="lg:flex lg:flex-col lg:space-y-4">
+                    <!-- Reference -->
 
-        <!-- Price -->
-        <div>
-            <label for="price" class="block mb-2 text-sm font-medium text-gray-700">Price:</label>
-            <input type="number" id="price" formControlName="price"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
-                [(ngModel)]="tutorial.price">
-            <p *ngIf="f.price.errors?.['min']" class="text-red-500">* Price must be greater than 0</p>
-        </div>
-    </div>
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Name:</label>
+                        <input type="text" id="name" formControlName="name"
+                            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
+                            [(ngModel)]="tutorial.name">
+                        <p *ngIf="f.name.invalid && (f.name.value && f.name.value.length < 1) && (f.name.untouched || f.name.touched)"
+                            class="text-red-500">* Name is required</p>
+                        <p *ngIf="f.name.value && f.name.value.length > 25 && (f.name.untouched || f.name.touched)"
+                            class="text-red-500">* Name can't be more than 25 characters</p>
+                    </div>
 
-    <!-- Columna 2 -->
-    <div class="lg:flex lg:flex-col lg:space-y-4">
-        <!-- Description -->
-        <div>
-            <label for="description" class="block mb-2 text-sm font-medium text-gray-700">Description:</label>
-            <textarea id="extended_description" formControlName="extended_description"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200 resize-none"
-                [(ngModel)]="tutorial.extended_description"></textarea>
-            <p *ngIf="f.extended_description.invalid && f.extended_description.touched" class="text-red-500">
-                * Description is required</p>
-        </div>
+                    <!-- Price -->
+                    <div>
+                        <label for="price" class="block mb-2 text-sm font-medium text-gray-700">Price:</label>
+                        <input type="number" id="price" formControlName="price"
+                            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
+                            [(ngModel)]="tutorial.price">
+                        <p *ngIf="f.price.errors?.['min']" class="text-red-500">* Price must be greater than 0</p>
+                    </div>
+                </div>
 
-        <!-- Category -->
-        <div>
-            <label for="category" class="block mb-2 text-sm font-medium text-gray-700">Category:</label>
-            <select id="category" formControlName="category"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
-                [(ngModel)]="tutorial.category">
-                <option value="">Select a category</option>
-                <option value="category1">AWS</option>
-                <option value="category2">Netifly</option>
-                <option value="category3">Strapi</option>
-            </select>
-            <p *ngIf="f.category.invalid && f.category.untouched" class="text-red-500">* Category
-                is
-                required</p>
-        </div>
+                <!-- Columna 2 -->
+                <div class="lg:flex lg:flex-col lg:space-y-4">
+                    <!-- Description -->
+                    <div>
+                        <label for="description"
+                            class="block mb-2 text-sm font-medium text-gray-700">Description:</label>
+                        <textarea id="extended_description" formControlName="extended_description"
+                            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200 resize-none"
+                            [(ngModel)]="tutorial.extended_description"></textarea>
+                        <p *ngIf="f.extended_description.invalid && f.extended_description.touched"
+                            class="text-red-500">
+                            * Description is required</p>
+                    </div>
 
-        <!-- Sale -->
-        <div>
-            <label for="sale" class="block mb-2 text-sm font-medium text-gray-700">Sale:</label>
-            <input type="checkbox" id="sale" formControlName="sale"
-                class="mr-2 leading-tight focus:outline-none accent-red-400" [(ngModel)]="tutorial.sale">
-        </div>
+                    <!-- Category -->
+                    <div>
+                        <label for="category" class="block mb-2 text-sm font-medium text-gray-700">Category:</label>
+                        <select id="category" formControlName="category"
+                            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
+                            [(ngModel)]="tutorial.category">
+                            <option value="">Select a category</option>
+                            <option value="category1">JavaScript</option>
+                            <option value="category2">Laravel</option>
+                            <option value="category3">React</option>
+                            <option value="category4">Vue</option>
+                            <option value="category4">Svelte</option>
+                            <option value="category4">C#</option>
+                            <option value="category4">Java</option>
+                            <option value="category4">Jenkins</option>
+                        </select>
+                        <p *ngIf="f.category.invalid && f.category.untouched" class="text-red-500">* Category
+                            is
+                            required</p>
+                    </div>
 
-        <!-- Image -->
-        <div>
-            <label for="image" class="block mb-2 text-sm font-medium text-gray-700">Image:</label>
-            <input type="text" id="image" formControlName="image"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
-                [(ngModel)]="tutorial.image">
+                    <!-- Sale -->
+                    <div>
+                        <label for="sale" class="block mb-2 text-sm font-medium text-gray-700">Sale:</label>
+                        <input type="checkbox" id="sale" formControlName="sale"
+                            class="mr-2 leading-tight focus:outline-none accent-red-400" [(ngModel)]="tutorial.sale">
+                    </div>
+
+                    <!-- Image -->
+                    <div>
+                        <label for="image" class="block mb-2 text-sm font-medium text-gray-700">Image:</label>
+                        <input type="text" id="image" formControlName="image"
+                            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
+                            [(ngModel)]="tutorial.image">
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <!-- Submit Button -->
+                <div class="col-span-2">
+                    <button type="submit"
+                        class="w-full mt-6 px-4 py-2 text-white rounded-md hover:bg-green-500 focus:outline-none focus:bg-blue-600 drop-shadow-lg"
+                        [ngClass]="{'bg-green-400': form.valid, 'bg-gray-400': form.invalid}"
+                        [disabled]="form.invalid">Submit</button>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- Submit Button -->
-    <!-- Submit Button -->
-    <div class="col-span-2">
-      <button type="submit"
-          class="w-full mt-6 px-4 py-2 text-white rounded-md hover:bg-green-500 focus:outline-none focus:bg-blue-600 drop-shadow-lg"
-          [ngClass]="{'bg-green-400': form.valid, 'bg-gray-400': form.invalid}"
-          [disabled]="form.invalid">Submit</button>
-  </div>
-  </div>
-</div>
