@@ -12,9 +12,12 @@ export class TutorialDetailsComponent implements OnInit {
   @Input() viewMode = false;
 
   @Input() currentTutorial: Tutorial = {
-    title: '',
-    description: '',
-    published: false
+    name: '',
+    price: 0,
+    extended_description: '',
+    category: '',
+    sale: false,
+    image: ''
   };
 
   message = '';
@@ -42,11 +45,14 @@ export class TutorialDetailsComponent implements OnInit {
     });
   }
 
-  updatePublished(status: boolean): void {
+/*   updatePublished(status: boolean): void {
     const data = {
-      title: this.currentTutorial.title,
-      description: this.currentTutorial.description,
-      published: status
+      name: this.currentTutorial.name,
+      price: this.currentTutorial.price,
+      extended_description: this.currentTutorial.extended_description,
+      category: this.currentTutorial.category,
+      sale: this.currentTutorial.sale,
+      image: this.currentTutorial.image
     };
 
     this.message = '';
@@ -61,7 +67,7 @@ export class TutorialDetailsComponent implements OnInit {
       },
       error: (e) => console.error(e)
     });
-  }
+  } */
 
   updateTutorial(): void {
     this.message = '';

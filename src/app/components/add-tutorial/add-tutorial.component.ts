@@ -9,18 +9,26 @@ import { TutorialService } from '../../services/tutorial.service';
 })
 export class AddTutorialComponent {
   tutorial: Tutorial = {
-    title: '',
-    description: '',
-    published: false
+    name: '',
+    price: 0,
+    extended_description: '',
+    category: '',
+    sale: false,
+    image: ''
   };
   submitted = false;
 
   constructor(private tutorialService: TutorialService) {}
 
+
   saveTutorial(): void {
     const data = {
-      title: this.tutorial.title,
-      description: this.tutorial.description
+      name: this.tutorial.name,
+      price: this.tutorial.price,
+      extended_description: this.tutorial.extended_description,
+      category: this.tutorial.category,
+      sale: this.tutorial.sale,
+      image: this.tutorial.image
     };
 
     this.tutorialService.create(data).subscribe({
@@ -35,9 +43,12 @@ export class AddTutorialComponent {
   newTutorial(): void {
     this.submitted = false;
     this.tutorial = {
-      title: '',
-      description: '',
-      published: false
+      name: '',
+      price: 0,
+      extended_description: '',
+      category: '',
+      sale: false,
+      image: ''
     };
   }
 }

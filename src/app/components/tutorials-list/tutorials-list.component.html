@@ -5,11 +5,11 @@
         type="text"
         class="form-control"
         placeholder="Search by title"
-        [(ngModel)]="title"
+        [(ngModel)]="name"
       />
       <div class="input-group-append">
         <button
-          class="btn btn-outline-secondary"
+          class="btn bg-orange-400"
           type="button"
           (click)="searchTitle()"
         >
@@ -27,7 +27,7 @@
         [class.active]="i == currentIndex"
         (click)="setActiveTutorial(tutorial, i)"
       >
-        {{ tutorial.title }}
+        {{ tutorial.name }}
       </li>
       }
     </ul>

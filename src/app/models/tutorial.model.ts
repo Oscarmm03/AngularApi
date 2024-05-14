@@ -1,6 +1,10 @@
 export class Tutorial {
   id?: any;
-  title?: string;
-  description?: string;
+  name?: string;
+  price?: number;
+  extended_description?: string;
+  category?: string;
+  sale?: boolean;
+  image?: string;
   published?: boolean;
 }

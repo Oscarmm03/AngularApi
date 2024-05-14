@@ -1,33 +1,82 @@
 <div>
   <div class="submit-form">
-    @if (!submitted) {
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input
-        type="text"
-        class="form-control"
-        id="title"
-        required
-        [(ngModel)]="tutorial.title"
-        name="title"
-      />
+    
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="tutorial.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          required
+          [(ngModel)]="tutorial.price"
+          name="price"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="extended_description">Extended Description</label>
+        <input
+          class="form-control"
+          id="extended_description"
+          required
+          [(ngModel)]="tutorial.extended_description"
+          name="extended_description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input
+          type="text"
+          class="form-control"
+          id="category"
+          required
+          [(ngModel)]="tutorial.category"
+          name="category"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="sale">Sale</label>
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="sale"
+          [(ngModel)]="tutorial.sale"
+          name="sale"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="image"
+          [(ngModel)]="tutorial.image"
+          name="image"
+        />
+      </div>
+
+      <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
     </div>
 
-    <div class="form-group">
-      <label for="description">Description</label>
-      <input
-        class="form-control"
-        id="description"
-        required
-        [(ngModel)]="tutorial.description"
-        name="description"
-      />
+    <div *ngIf="submitted">
+      <h4>El curso {{ tutorial.name }} se ha subido correctamente!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Agrega otro curso</button>
     </div>
-
-    <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
-    } @else {
-    <h4>Tutorial was submitted successfully!</h4>
-    <button class="btn btn-success" (click)="newTutorial()">Add</button>
-    }
   </div>
 </div>
