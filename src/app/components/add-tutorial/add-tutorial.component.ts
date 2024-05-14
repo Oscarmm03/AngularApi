@@ -1,6 +1,16 @@
 import { Component } from '@angular/core';
-import { Tutorial } from '../../models/tutorial.model';
+//import { Tutorial } from '../../models/tutorial.model';
 import { TutorialService } from '../../services/tutorial.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+export interface Tutorial {
+  name: string;
+  price: number;
+  extended_description: string;
+  category: string;
+  sale: boolean;
+  image: string;
+}
 
 @Component({
   selector: 'app-add-tutorial',
@@ -18,7 +28,18 @@ export class AddTutorialComponent {
   };
   submitted = false;
 
-  constructor(private tutorialService: TutorialService) {}
+  form = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.maxLength(25)]),
+    price: new FormControl('', [Validators.required, Validators.min(0)]),
+    extended_description: new FormControl('', Validators.required),
+    category: new FormControl('', Validators.required),
+    sale: new FormControl(''),
+    image: new FormControl(''),
+  });
+
+  f = this.form.controls;
+
+  constructor(private tutorialService: TutorialService) { }
 
 
   saveTutorial(): void {
@@ -50,5 +71,16 @@ export class AddTutorialComponent {
       sale: false,
       image: ''
     };
+  }
+
+  onSubmit(): void {
+    this.submitted = true;
+
+    if (this.form.invalid) {
+      return;
+    }
+    this.saveTutorial();
+
+    console.log(JSON.stringify(this.form.value, null, 2));
   }
 }
