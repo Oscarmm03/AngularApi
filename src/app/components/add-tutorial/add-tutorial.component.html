@@ -9,23 +9,23 @@
 
                     <!-- Name -->
                     <div>
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Name:</label>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-200">Nombre de la serie o película:</label>
                         <input type="text" id="name" formControlName="name"
                             class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
                             [(ngModel)]="tutorial.name">
                         <p *ngIf="f.name.invalid && (f.name.value && f.name.value.length < 1) && (f.name.untouched || f.name.touched)"
-                            class="text-red-500">* Name is required</p>
+                            class="text-red-500">* Nombre obligatorio</p>
                         <p *ngIf="f.name.value && f.name.value.length > 25 && (f.name.untouched || f.name.touched)"
                             class="text-red-500">* Name can't be more than 25 characters</p>
                     </div>
 
                     <!-- Price -->
                     <div>
-                        <label for="price" class="block mb-2 text-sm font-medium text-gray-700">Price:</label>
+                        <label for="price" class="block mb-2 text-sm font-medium text-gray-200">Precio por descarga</label>
                         <input type="number" id="price" formControlName="price"
                             class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
                             [(ngModel)]="tutorial.price">
-                        <p *ngIf="f.price.errors?.['min']" class="text-red-500">* Price must be greater than 0</p>
+                        <p *ngIf="f.price.errors?.['min']" class="text-red-500">*Mayor a 0</p>
                     </div>
                 </div>
 
@@ -34,46 +34,42 @@
                     <!-- Description -->
                     <div>
                         <label for="description"
-                            class="block mb-2 text-sm font-medium text-gray-700">Description:</label>
+                            class="block mb-2 text-sm font-medium text-gray-200">Descripción:</label>
                         <textarea id="extended_description" formControlName="extended_description"
                             class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200 resize-none"
                             [(ngModel)]="tutorial.extended_description"></textarea>
                         <p *ngIf="f.extended_description.invalid && f.extended_description.touched"
-                            class="text-red-500">
-                            * Description is required</p>
-                    </div>
+                            class="text-red-500">*Debes añadir una descripción</p>
+                        </div>
 
                     <!-- Category -->
                     <div>
-                        <label for="category" class="block mb-2 text-sm font-medium text-gray-700">Category:</label>
+                        <label for="category" class="block mb-2 text-sm font-medium text-gray-200">Categoría:</label>
                         <select id="category" formControlName="category"
                             class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
                             [(ngModel)]="tutorial.category">
-                            <option value="">Select a category</option>
-                            <option value="category1">JavaScript</option>
-                            <option value="category2">Laravel</option>
-                            <option value="category3">React</option>
-                            <option value="category4">Vue</option>
-                            <option value="category4">Svelte</option>
-                            <option value="category4">C#</option>
-                            <option value="category4">Java</option>
-                            <option value="category4">Jenkins</option>
+                            <option value="">Selecciona una Categoría</option>
+                            <option value="category1">Acción</option>
+                            <option value="category2">Aventura</option>
+                            <option value="category3">Infantil</option>
+                            <option value="category4">Para toda la família</option>
+                            <option value="category4">Top España</option>
+                            <option value="category4">Drama</option>
+                            <option value="category4">Aventura</option>
                         </select>
-                        <p *ngIf="f.category.invalid && f.category.untouched" class="text-red-500">* Category
-                            is
-                            required</p>
+                        <p *ngIf="f.category.invalid && f.category.untouched" class="text-red-500">*Categoría oblatoría</p>
                     </div>
 
                     <!-- Sale -->
                     <div>
-                        <label for="sale" class="block mb-2 text-sm font-medium text-gray-700">Sale:</label>
+                        <label for="sale" class="block mb-2 text-sm font-medium text-gray-200">Precio:</label>
                         <input type="checkbox" id="sale" formControlName="sale"
                             class="mr-2 leading-tight focus:outline-none accent-red-400" [(ngModel)]="tutorial.sale">
                     </div>
 
                     <!-- Image -->
                     <div>
-                        <label for="image" class="block mb-2 text-sm font-medium text-gray-700">Image:</label>
+                        <label for="image" class="block mb-2 text-sm font-medium text-gray-200">Imagen:</label>
                         <input type="text" id="image" formControlName="image"
                             class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-red-200"
                             [(ngModel)]="tutorial.image">

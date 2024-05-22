@@ -1,11 +1,26 @@
-<nav class="flex flex-wrap items-center justify-between px-4 py-2 bg-gray-800 text-white">
+<style>
+    nav a:hover {
+        color: white !important;
+    }
+</style>
+
+<nav class="flex items-center justify-between px-4 py-2 bg-red-600 text-black font-extrabold">
     <div class="flex items-center flex-shrink-0 mr-6">
         <a routerLink="home"
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">
-            Home
+            class="font-extrabold inline-flex items-center justify-center whitespace-nowrap rounded-md text-base ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">
+            Inicio
         </a>
-        <a routerLink="tutorials" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">Tutoriales</a>
-        <a routerLink="add" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">ADMIN</a>
+    </div>
+    <div class="flex-grow"></div>
+    <div class="flex items-center">
+        <a routerLink="tutorials"
+            class="font-extrabold inline-flex items-center justify-center whitespace-nowrap rounded-md text-base ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">
+            Tus Series
+        </a>
+        <a routerLink="add"
+            class="font-extrabold inline-flex items-center justify-center whitespace-nowrap rounded-md text-base ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">
+            Perfil
+        </a>
     </div>
     <div class="block lg:hidden">
         <button id="nav-toggle"
@@ -15,20 +30,5 @@
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
         </button>
-    </div>
-    
-    <div class="w-full flex-grow lg:flex lg:w-auto" [class.hidden]="!isMenuOpen" id="nav-content">
-        <div class="flex items-center text-md lg:flex-grow">
-
-        </div>
-    </div>
-
-    <div class="flex justify-end items-end mr-4">
-        <div class="inline-block ">
-            <input class="w-64 px-4 py-2 rounded-full shadow text-black" type="text" placeholder="Search...">
-            <button
-                class=" top-0 right-0 bg-red-300 hover:bg-red-500 text-white -ml-16 px-4 py-2 rounded-full shadow transition-transform duration-300"
-                type="submit">Go</button>
-        </div>
     </div>
 </nav>

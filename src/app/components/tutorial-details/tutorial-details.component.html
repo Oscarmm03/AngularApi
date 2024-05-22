@@ -1,23 +1,29 @@
 @if (viewMode) {
   @if (currentTutorial.id) {
-    <h4>Tutorial</h4>
-    <div>
-      <label><strong>Name:</strong></label> {{ currentTutorial.name }}
+    <h4 class="text-red-500">Netflix</h4>
+
+    <div class="text-white">
+      <label><strong>Nombre:</strong></label> {{ currentTutorial.name }}
     </div>
-    <div>
-      <label><strong>Price:</strong></label> {{ currentTutorial.price }}
+
+    <div class="text-white">
+      <label><strong class="text-white">Precio descarga:</strong></label> {{ currentTutorial.price }}
     </div>
-    <div>
-      <label><strong>Extended Description:</strong></label> {{ currentTutorial.extended_description }}
+
+    <div class="text-white">
+      <label><strong>Descripción:</strong></label> {{ currentTutorial.extended_description }}
     </div>
-    <div>
-      <label><strong>Category:</strong></label> {{ currentTutorial.category }}
+
+    <div class="text-white">
+      <label><strong>Categoría:</strong></label> {{ currentTutorial.category }}
     </div>
-    <div>
-      <label><strong>Sale:</strong></label> {{ currentTutorial.sale ? "On Sale" : "Not on Sale" }}
+
+    <div class="text-white">
+      <label><strong>Oferta:</strong></label> {{ currentTutorial.sale ? "On Sale" : "Not on Sale" }}
     </div>
-    <div>
-      <label><strong>Image:</strong></label> <img src="{{ currentTutorial.image }}" alt="Tutorial Image">
+
+    <div class="text-white">
+      <label><strong>Imagen:</strong></label> <img src="{{ currentTutorial.image }}" alt="Tutorial Image">
     </div>
 
     <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial.id }}">
@@ -28,10 +34,10 @@
 } @else {
   @if (currentTutorial.id) {
     <div class="edit-form">
-      <h4>Tutorial</h4>
+      <h4 class="text-red-600">Netflix</h4>
       <form>
-        <div class="form-group">
-          <label for="name">Name</label>
+        <div class="form-group text-white">
+          <label for="name">Serie o pelicula</label>
           <input
             type="text"
             class="form-control"
@@ -40,8 +46,8 @@
             name="name"
           />
         </div>
-        <div class="form-group">
-          <label for="price">Price</label>
+        <div class="form-group text-white">
+          <label for="price">Precio por descarga</label>
           <input
             type="number"
             class="form-control"
@@ -50,8 +56,8 @@
             name="price"
           />
         </div>
-        <div class="form-group">
-          <label for="extended_description">Extended Description</label>
+        <div class="form-group text-white">
+          <label for="extended_description">Descripción</label>
           <input
             type="text"
             class="form-control"
@@ -60,8 +66,8 @@
             name="extended_description"
           />
         </div>
-        <div class="form-group">
-          <label for="category">Category</label>
+        <div class="form-group text-white">
+          <label for="category">Categoría</label>
           <input
             type="text"
             class="form-control"
@@ -70,8 +76,8 @@
             name="category"
           />
         </div>
-        <div class="form-group">
-          <label for="sale">Sale</label>
+        <div class="form-group text-white">
+          <label for="sale">Oferta</label>
           <input
             type="checkbox"
             class="form-check-input"
@@ -80,8 +86,8 @@
             name="sale"
           />
         </div>
-        <div class="form-group">
-          <label for="image">Image URL</label>
+        <div class="form-group text-white">
+          <label for="image">Imágen URL</label>
           <input
             type="text"
             class="form-control"
@@ -92,19 +98,19 @@
         </div>
 
         <button class=" mr-2 py-2 px-4 bg-red-500 rounded-md" (click)="deleteTutorial()">
-          Delete
+          Eliminar
         </button>
 
         <button
           type="submit"
           class=" mb-2 py-2 px-4 bg-green-500 rounded-md"
           (click)="updateTutorial()">
-          Update
+         Subir
         </button>
         <p>{{ message }}</p>
       </form>
     </div>
   } @else {
-    <p>Cannot access this Tutorial...</p>
+    <p>No hay series ni peliculas...</p>
   }
 }
